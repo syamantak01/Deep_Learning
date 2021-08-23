@@ -6,7 +6,7 @@ from utils import characters, n_char
 from utils import load_data, char_to_tensor, name_to_tensor, random_training_example
 
 #set the device
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'Using {device} device')
 
 #Building RNN from scratch

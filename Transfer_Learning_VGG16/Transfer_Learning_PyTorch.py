@@ -25,7 +25,7 @@ batch_size = 64
 transform = Compose(
     [Resize((224, 224)),    #the inputs to the VGG network are of the shape (224, 224), while that of CIFAR-10 dataset is (32, 32) and hence we resize them to (224, 224)
      ToTensor(),
-     Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])      #Normalizing results in each pixel value to be between 0 and 1; We are using mean = 0.5 and sttandard deviation = 0.5 for all 3 channels
+     Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])      #Normalizes the pixel values; We are using mean = 0.5 and sttandard deviation = 0.5 for all 3 channels
 
 #train, test datasets and dataloaders
 train_data = datasets.CIFAR10(root='./dataset', train=True, download=True, transform=transform)
